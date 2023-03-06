@@ -1,0 +1,22 @@
+{
+  "name": "create-kuangw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "create-kuangw": "index.js"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "kolorist": "^1.7.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpileOnly index.ts",
+    "dev:js": "node index.js"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "create-kuangw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -16,7 +16,7 @@
     "@types/node": "^18.14.6"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly index.ts",
-    "dev:js": "node index.js"
+    "dev": "node index.js",
+    "push": "npm publish"
   }
 }

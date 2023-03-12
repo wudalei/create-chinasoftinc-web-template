@@ -1,0 +1,11 @@
+/dist/*
+.local
+.output.js
+commitlint.config.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
+./src/index.html

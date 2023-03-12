@@ -1,7 +1,0 @@
-const choiceOptions = {
-  "vue-admin": {
-
-    
-
-  },
-};

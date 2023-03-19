@@ -1,45 +1,46 @@
-<!--
- * @Author: liuxiang liuxiang@163.com
- * @Date: 2023-02-27 11:07:02
- * @LastEditors: liuxiang liuxiang@163.com
- * @LastEditTime: 2023-03-10 16:08:41
- * @FilePath: /vue-ts-threejs/src/pages/index.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
   <view class="content-bg">
-    <view class="text-p" @click="goNext"> 首页 </view>
-    <view class="content-p" @click="goSave()">点击使用vuex保存</view>
-    {{ userInfo }}
+    <view class="text-p" @click="goNext"> 跳转655 555</view>
+    <view class="content-p" @click="syncChange">同步修改数据</view>
+    <view class="content-p" @click="waitChange">异步修改数据</view>
+
+    <view class="content-p">缓存数据 :{{ user.userInfo }}</view>
+
+    <view class="content-p" @click="queryLookFun">点击发送请求</view>
+
+    <input class="input-l" type="text" placeholder="请输入" />
   </view>
 </template>
 
-<script setup>
-import { computed } from 'vue';
-import { useStore } from 'vuex';
-
-const store = useStore();
+<script setup lang="ts">
+import { queryLook } from '../../api/index';
+import { useUserStore } from '@/store/modules/user';
 const env = import.meta.env;
 console.log('获取的当前环境变量', env);
-const userInfo = computed(() => store.state.index.userInfo);
+
+const user = useUserStore();
+
 const goNext = () => {
   uni.navigateTo({
-    url: '/mine',
+    url: '/pages/next/index',
   });
 };
 
-const goSave = () => {
-  uni.showLoading({
-    title: '保存中...',
+const syncChange = () => {
+  user.setUserInfo({
+    name: 'liuxiang',
   });
-  store.dispatch('updataUserInfo').then((data) => {
-    console.log('用户数据保存成功', data);
-    uni.hideLoading();
-    uni.showToast({
-      icon: 'none',
-      title: '用户数据保存成功',
-    });
+};
+const waitChange = async () => {
+  await user.setUserInfoForWait({
+    name: 'liuxiang2',
   });
+  console.log('👴修改完成');
+};
+
+const queryLookFun = async () => {
+  const res = await queryLook({});
+  console.log('获取返回数据', res);
 };
 </script>
 
@@ -53,17 +54,27 @@ const goSave = () => {
     height: 200rpx;
     line-height: 200rpx;
     margin-top: 200rpx;
-    color: red;
+    color: $uni-color-primary;
   }
 
   .content-p {
     font-size: 30rpx;
     text-align: center;
     width: 100%;
-    height: 30rpx;
-    line-height: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
     margin-top: 30rpx;
     color: red;
+  }
+  .input-l {
+    line-height: 70rpx;
+    height: 70rpx;
+    margin-top: 50rpx;
+    border: 1px solid #eee;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    margin-left: 5%;
+    width: 80%;
   }
 }
 </style>

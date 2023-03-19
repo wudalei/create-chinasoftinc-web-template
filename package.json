@@ -1,10 +1,10 @@
 {
-  "name": "create-kuangw",
+  "name": "create-chinasoftinc-web-template",
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "create-kuangw": "index.js"
+    "create-chinasoftinc-web-template": "index.js"
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",

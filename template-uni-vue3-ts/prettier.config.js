@@ -15,4 +15,12 @@ module.exports = {
   htmlWhitespaceSensitivity: 'strict',
   // 根据操作系统自动设置换行符
   endOfLine: 'auto',
+  overrides: [
+    {
+      files: '*.html',
+      options: {
+        parser: 'html',
+      },
+    },
+  ],
 };

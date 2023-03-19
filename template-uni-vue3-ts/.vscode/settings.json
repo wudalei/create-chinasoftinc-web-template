@@ -76,9 +76,7 @@
     "**/dist/**": true,
     "**/yarn.lock": true
   },
-  "stylelint.enable": true,
-  "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
-  "stylelint.packageManager": "yarn",
+
   "path-intellisense.mappings": {
     "@/": "${workspaceRoot}/src"
   },
@@ -103,13 +101,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[less]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-      "source.fixAll.stylelint": true
-    }
-  },
+
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -137,5 +129,6 @@
   "i18n-ally.enabledFrameworks": ["vue", "react"],
   "volar.format.initialIndent": {
     "html": true
-  }
+  },
+  "eslint.codeActionsOnSave.rules": null
 }

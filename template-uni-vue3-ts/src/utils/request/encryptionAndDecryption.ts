@@ -1,11 +1,3 @@
-/*
- * @Description: 加密和解密
- * @Author: ltm
- * @Date: 2022-6-16 16:47:21
- * @params:
- * @LastEditors: liuxiang liuxiang@163.com
- * @LastEditTime: 2023-03-09 16:34:55
- */
 import CryptoJS from 'crypto-js';
 import hmac from 'crypto-js/hmac-md5';
 
